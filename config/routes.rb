@@ -1,4 +1,10 @@
 EClay::Application.routes.draw do
+
+  
+  get "inicio/show"
+
+  root :to => "inicio#show"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
