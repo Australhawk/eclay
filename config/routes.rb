@@ -1,6 +1,9 @@
 EClay::Application.routes.draw do
 
   
+  resources :works
+
+
   get "inicio/show"
 
   root :to => "inicio#show"

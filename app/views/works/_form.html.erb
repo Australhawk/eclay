@@ -1,0 +1,17 @@
+<%= simple_form_for(@work) do |f| %>
+  <% if @work.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@work.errors.count, "error") %> prohibited this work from being saved:</h2>
+
+      <ul>
+      <% @work.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.input :name %>
+  <%= f.input :url %>
+  <%= f.input :descripcion %>
+  <%= f.button :submit, class: "btn-success" %>
+<% end %>
