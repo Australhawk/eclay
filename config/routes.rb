@@ -1,11 +1,15 @@
 EClay::Application.routes.draw do
 
   
+
   devise_for :admins
 
   devise_scope :admin do
     get "admin_logout", :to => "devise/sessions#destroy"
-  end
+
+  resources :contacts
+
+
 
   resources :works
 
