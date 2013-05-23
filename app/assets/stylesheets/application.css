@@ -11,3 +11,7 @@
  *= require_self
  *= require_tree .
  */
+
+.fix-menu{
+	margin-top: 20px;
+}

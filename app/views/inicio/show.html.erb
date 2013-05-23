@@ -1,2 +1,29 @@
-<h1>Inicio#show</h1>
-<p>Find me in app/views/inicio/show.html.erb</p>
+<div class="hero-unit">
+  <h1>Bievenidos a e-Clay</h1>
+  <p>Si necesitas una página web, diseño, branding, aplicaciones moviles no olvides en consultar nuestra seccion
+  	de servicios, si tienes dudas o consultas puede dirigirte a nuestro formulario de contacto</p>
+  <p>
+    <a class="btn btn-primary btn-large">
+      Servicios
+    </a>
+  </p>
+</div>
+<div class="page-header">
+  	<h1>Trabajos <small>nuestras ultimas creaciones</small></h1>
+</div>
+<div class="row-fluid">
+    <ul class="thumbnails">
+    	<% @works.each do |work| %>
+	      	<li class="span4">
+	            <div class="thumbnail">
+	              <%= holder_tag '300x200' %>
+	              <div class="caption">
+	                <h3><%= work.name %></h3>
+	                <p><%= work.descripcion%></p>
+	                <p><a href="#" class="btn btn-primary">Action</a> <a href="#" class="btn">Action</a></p>
+	              </div>
+	            </div>
+	      	</li> 
+      	<% end %>             
+    </ul>
+</div>
