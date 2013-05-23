@@ -2,11 +2,15 @@ class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
   def index
+    if admin_signed_in?
     @contacts = Contact.all
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @contacts }
+    end
+    else
+      render 'public/404'   
     end
   end
 
