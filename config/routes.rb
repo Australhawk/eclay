@@ -2,7 +2,11 @@ EClay::Application.routes.draw do
 
   
 
-  devise_for :admins
+  if Rails.env == 'production'
+    devise_for :admins, :controllers => { :registrations => "registrations" } 
+  else
+    devise_for :admins
+  end
 
   devise_scope :admin do
     get "admin_logout", :to => "devise/sessions#destroy"

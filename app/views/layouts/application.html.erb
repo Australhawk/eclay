@@ -54,6 +54,13 @@
 			</div>
 		  </div>
 		</div>
+		<!-- ALERTAS -->
+		<% flash.each do |type,message| %>
+			<div class="alert <%= flash_class type %>">
+				<a href="#" class="close" data-dismiss="alert">&times;</a>
+				<%= message %>
+			</div>
+		<% end %>
 		<!-- MAIN CONTENT -->
 		<%= yield %>
 		<% if admin_signed_in? %>
