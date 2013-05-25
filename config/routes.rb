@@ -1,30 +1,37 @@
 EClay::Application.routes.draw do
 
-  
+  # ERRORS
+  match '/404', :to => 'errors#not_found'
+  match '/422', :to => 'errors#server_error'
+  match '/500', :to => 'errors#server_error'
+  get '/404', :to => 'errors#not_found'
+  get '/422', :to => 'errors#server_error'
+  get '/500', :to => 'errors#server_error'
 
+  
+  # REGISTRO DE ADMINISTRADORES
   if Rails.env == 'production'
     devise_for :admins, :controllers => { :registrations => "registrations" } 
   else
     devise_for :admins
   end
 
+  # LOGOUT GET
   devise_scope :admin do
     get "admin_logout", :to => "devise/sessions#destroy"
-
   end 
-
   
-  get "contacto", :to => "contacts#new", as: "new_contact"
-  
-
+  #RESOURCES
   resources :contacts, :except => [:new]
-
   resources :works
 
+  # CONTACTO
+  get "contacto", :to => "contacts#new", as: "new_contact"
 
-
+  #INICIO
   get "inicio/show"
 
+  #ROOT
   root :to => "inicio#show"
 
   # The priority is based upon order of creation:
