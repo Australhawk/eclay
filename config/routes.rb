@@ -12,7 +12,12 @@ EClay::Application.routes.draw do
     get "admin_logout", :to => "devise/sessions#destroy"
 
   end 
-  resources :contacts
+
+  
+  get "contacto", :to => "contacts#new", as: "new_contact"
+  
+
+  resources :contacts, :except => [:new]
 
   resources :works
 
