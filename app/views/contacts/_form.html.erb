@@ -2,14 +2,23 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name, label:'Nombre' %>
-    <%= f.input :business, label:'Empresa' %>
-    <%= f.input :email, label:'E-Mail' %>
-    <%= f.input :phone, label:'Teléfono' %>
-    <%= f.input :description, label:'Descripción', input_html: { rows: 3, class: "input-xxlarge" } %>
+    <div class="row">
+      <div class="span6">
+        <%= f.input :name, label:'Nombre', input_html: { class: "input-xlarge" } %>
+        <%= f.input :business, label:'Empresa', input_html: { class: "input-xlarge" } %>
+        <%= f.input :email, label:'E-Mail', input_html: { class: "input-xlarge" } %>
+        <%= f.input :phone, label:'Teléfono', input_html: { class: "input-xlarge" } %>
+        <%= f.input :description, label:'Descripción', input_html: { rows: 3, class: "input-xlarge" } %>
+      </div>
+      <div class="span4">
+        <h4>Formulario de contacto</h4>
+        <p>Cuentanos tu idea de proyecto, lo que necesitara y nosotros evaluaremos tu petición.</p>
+        <%= image_tag "contacto.png" %>
+      </div>
+    </div>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, 'Enviar' %>
+    <%= f.button :submit, 'Enviar', class: "btn-block btn-large btn-primary" %>
   </div>
 <% end %>

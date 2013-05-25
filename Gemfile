@@ -12,12 +12,14 @@ gem 'devise'
 gem 'draper'
 gem 'js-routes'
 gem 'paperclip'
-gem 'rmagick'
+
+gem "cancan"
 
 group :development, :test do
 	gem 'sqlite3'	
 end
 group :production do
+	gem 'rmagick'
 	gem 'pg'
 end
 
