@@ -70,7 +70,7 @@
 				<div class="span4">
 					<% if admin_signed_in? %>
 						<div class="btn-group dropup">
-						  <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">
+						  <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
 						    <%= current_admin.profile_name %>
 						    <span class="caret"></span>
 						  </a>
@@ -92,7 +92,7 @@
 						    </li>
 						  </ul>
 						</div>
-						<%= link_to 'Cerrar sesión', admin_logout_path, html_options = {class: "btn btn-mini"} %>
+						<%= link_to 'Cerrar sesión', admin_logout_path, html_options = {class: "btn"} %>
 					<% else %>
 						<%= link_to 'Administrar', new_admin_session_path, html_options = {class: "btn btn-mini"} %>
 					<% end %>

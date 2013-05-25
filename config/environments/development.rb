@@ -37,6 +37,6 @@ EClay::Application.configure do
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
-  Paperclip.options[:command_path] = "C:\\Program Files (x86)\\ImageMagick-6.8.5-Q16"
+  Paperclip.options[:command_path] = "D:/RailsInstaller/ImageMagick"
   
 end
