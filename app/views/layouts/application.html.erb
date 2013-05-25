@@ -63,38 +63,44 @@
 		<% end %>
 		<!-- MAIN CONTENT -->
 		<%= yield %>
-		<% if admin_signed_in? %>
-		<div class="btn-group dropup">
-		  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-		    <%= current_admin.profile_name %>
-		    <span class="caret"></span>
-		  </a>
-		  <ul class="dropdown-menu">
-		    <li>
-		    	<%= link_to (edit_admin_registration_path) do %>
-			    	<i class="icon-user"></i> Perfil
-			    <% end %>
-		    </li>
-		    <li>
-		    	<%= link_to (works_path) do %>
-			    	<i class="icon-book"></i> Trabajos
-			    <% end %>
-		    </li>
-		    <li>
-		    	<%= link_to (contacts_path) do %>
-			    	<i class="icon-envelope"></i> Contactos
-			    <% end %>
-		    </li>
-		  </ul>
-		</div>
-		<%= link_to 'Cerrar sesión', admin_logout_path, html_options = {class: "btn"} %>
-		<% else %>
-		<%= link_to 'Iniciar sesión', new_admin_session_path, html_options = {class: "btn"} %>
-		
-		<% end %>
-		
+
 		<!-- FOOTER -->
-	</div>
+		<div class="well">
+			<div class="row">
+				<div class="span4">
+					<% if admin_signed_in? %>
+						<div class="btn-group dropup">
+						  <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">
+						    <%= current_admin.profile_name %>
+						    <span class="caret"></span>
+						  </a>
+						  <ul class="dropdown-menu">
+						    <li>
+						    	<%= link_to (edit_admin_registration_path) do %>
+							    	<i class="icon-user"></i> Perfil
+							    <% end %>
+						    </li>
+						    <li>
+						    	<%= link_to (works_path) do %>
+							    	<i class="icon-book"></i> Trabajos
+							    <% end %>
+						    </li>
+						    <li>
+						    	<%= link_to (contacts_path) do %>
+							    	<i class="icon-envelope"></i> Contactos
+							    <% end %>
+						    </li>
+						  </ul>
+						</div>
+						<%= link_to 'Cerrar sesión', admin_logout_path, html_options = {class: "btn btn-mini"} %>
+					<% else %>
+						<%= link_to 'Administrar', new_admin_session_path, html_options = {class: "btn btn-mini"} %>
+					<% end %>
+				</div>
+			</div>
+			
+
+		</div>
 
 </body>
 </html>

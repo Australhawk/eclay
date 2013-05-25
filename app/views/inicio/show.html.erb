@@ -16,10 +16,14 @@
     	<% @works.each do |work| %>
 	      	<li class="span4">
 	            <div class="thumbnail">
-	              <%= holder_tag '300x200' %>
+                <% if work.image.to_s == "none" %>
+	               <%= holder_tag '300x200' %>
+                <% else %>
+                  <%= image_tag work.image, width: "290px"%>
+                <% end %>
 	              <div class="caption">
 	                <h3><%= work.name %></h3>
-	                <p><%= work.descripcion%></p>
+                  <p><%= work.descripcion%></p>
 	                <p><a href="<%= work.url %>" class="btn btn-primary btn-large btn-block">Ver página web</a></p>
 	              </div>
 	            </div>

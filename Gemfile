@@ -11,6 +11,8 @@ gem 'holder_rails'
 gem 'devise'
 gem 'draper'
 gem 'js-routes'
+gem 'paperclip'
+gem 'rmagick'
 
 group :development, :test do
 	gem 'sqlite3'	
