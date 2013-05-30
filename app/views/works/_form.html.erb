@@ -14,5 +14,5 @@
   <%= f.input :url %>
   <%= f.input :descripcion %>
   <%= f.input :image, label: "Imagen" %>
-  <%= f.button :submit, class: "btn-success", data-loading-text: "Enviado..."  %>
+  <%= f.button :submit, class: "btn-success", :disable_with => 'Enviando...'  %>
 <% end %>
