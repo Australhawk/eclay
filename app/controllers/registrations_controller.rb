@@ -2,8 +2,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def new
   	
-    flash[:info] = 'Imposible crear una cuenta'
-    redirect_to root_path
+    
 	
   end
 

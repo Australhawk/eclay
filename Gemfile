@@ -9,9 +9,9 @@ gem 'rails', '3.2.13'
 gem 'simple_form'
 gem 'holder_rails'
 gem 'devise'
-gem 'draper'
-gem 'js-routes'
-gem 'paperclip'
+
+gem 'carrierwave'
+
 
 gem "cancan"
 
